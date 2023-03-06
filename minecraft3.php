@@ -30,6 +30,8 @@ $aryCsv = mb_convert_encoding($aryCsv,"UTF-8","SJIS");
 		<label>クラフトしたいアイテム<br>
 		<input type="text" name="mainItem" ></label>  
 		<input type="submit" value="検索する">
+		
+		
   </form>
   
 <!-- //<p id="result">調べたいアイテムを入力してください</p> -->
