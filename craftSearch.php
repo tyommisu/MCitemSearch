@@ -560,6 +560,7 @@ if(isset($mainItem)){
         $result_matl5 = $aryCsv[$arySearch][$matl5];
         $result_qty5 = $aryCsv[$arySearch][$qty5];
         
+        echo $mainItem."<br>";
         echo "<font><b>$mainItem</b></font>"."の材料<br><br>";
         echo "<img src=\"img/$img[$arySearch]\"><br><br>";
         echo "　材料1：".$result_matl1." / ".$result_qty1."個<br>";
