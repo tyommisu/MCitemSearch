@@ -59,12 +59,12 @@ $img = array('000img.webp','001img.webp','002img.webp','003img.webp','004img.web
     '196img.webp','197img.webp','198img.webp','199img.webp','200img.webp',
     '201img.webp','202img.webp','203img.webp','204img.webp','205img.webp',
     '206img.webp','207img.webp','208img.webp','209img.webp','210img.webp',
-    '211img.webp','212img.webp','213img.webp','214img.webp'
-);
+    '211img.webp','212img.webp','213img.webp','214img.webp');
 ?>
 
 <html>
-  <h3>クラフト検索</h3>
+  <h3>1.クラフト検索</h3>
+  <link rel ="stylesheet" href="css.css">
   <form action="" method="post">
     リストから検索<br>
     <select name = "listItem">
@@ -509,7 +509,8 @@ $img = array('000img.webp','001img.webp','002img.webp','003img.webp','004img.web
 <option>金のニンジン</option>
 
      </datalist><br><br>
-     <input type="submit" value="検索"><br><br>
+     <input type="submit" value="検索">
+     
     </form>
 
     <?php
@@ -531,12 +532,17 @@ $img = array('000img.webp','001img.webp','002img.webp','003img.webp','004img.web
     list( $matl1,$matl2,$matl3,$matl4,$matl5)= array(2,4,6,8,10);
 //個数のリスト
     list( $qty1,$qty2,$qty3,$qty4,$qty5) = array(3,5,7,9,11);
-//備考のリスト
-// list( $note1,$note2,$note3,$note4,$note5) = array(12,13,14,15,16);
+
 
 
 
 if(isset($mainItem)){
+    //array_search("検索値","検索する配列")　→　配列の中で何番目の値か 
+    //array_column($配列,$取り出すカラム名の文字列　→配列の中で文字列が何番目か
+    //　　 1.array_column($aryCsv,0) …　$aryCsvの配列データの中で[0]のデータを配列として出す
+    //   2.array_search($mainItem,array_column(　…　　1の[0]のデータのみを抽出した配列から$mainItemが何番目かを出す
+ 
+    
     $arySearch = array_search($mainItem,array_column($aryCsv,0));
     if($arySearch !== false){
         //材料1
@@ -556,7 +562,7 @@ if(isset($mainItem)){
         $result_matl5 = $aryCsv[$arySearch][$matl5];
         $result_qty5 = $aryCsv[$arySearch][$qty5];
         
-        echo $mainItem."<br>";
+
         echo "<font><b>$mainItem</b></font>"."の材料<br><br>";
         echo "<img src=\"img/$img[$arySearch]\"><br><br>";
         echo "　材料1：".$result_matl1." / ".$result_qty1."個<br>";
@@ -579,5 +585,5 @@ if(isset($mainItem)){
  }
 
 ?>
-
+<br><a href="main.php">メイン画面に戻る</a>
 </html>
