@@ -1,9 +1,5 @@
 <?php
 
-// if($_SERVER['REQUEST_METHOD']=== 'POST'){
-//     $mainItem = $_POST['mainItem'];
-// }
-
 //ファイルを変数に入れる
 $csv_file = file_get_contents('minecraftItem.csv');
 
@@ -20,8 +16,6 @@ foreach ($aryHoge as $key => $value){
 //文字化けを解消（変換後のエンコーディング：UTF-8、変換前のエンコーディング：SJIS）
 $aryCsv = mb_convert_encoding($aryCsv,"UTF-8","SJIS");
 
-//配列に格納されたか確認
-//print_r($aryCsv);
 
 $img = array('000img.webp','001img.webp','002img.webp','003img.webp','004img.webp','005img.webp',
     '006img.webp','007img.webp','008img.webp','009img.webp','010img.webp',
@@ -70,6 +64,7 @@ $img = array('000img.webp','001img.webp','002img.webp','003img.webp','004img.web
 ?>
 
 <html>
+  <h3>クラフト検索</h3>
   <form action="" method="post">
     リストから検索<br>
     <select name = "listItem">
@@ -518,9 +513,10 @@ $img = array('000img.webp','001img.webp','002img.webp','003img.webp','004img.web
     </form>
 
     <?php
-    $listItem = $_POST['listItem'];
-    $freeItem = $_POST['freeItem'];
-   
+
+    
+    $listItem =filter_input(INPUT_POST,'listItem');
+    $freeItem =filter_input(INPUT_POST,'freeItem');
     
     if(($listItem!="noselect")&&($freeItem=="")){
         $mainItem = $listItem;
