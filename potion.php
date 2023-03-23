@@ -77,7 +77,7 @@ $img = array('p000.png','p001.png','p002.png','p003.png','p004.png','p005.png','
         //強化
         $result_reinfo = $aryCsv[$arySearch][$reinfo];
         
-        echo "<font><b>$potion</b></font>"."の作り方<br><br>";
+        echo "<b>$potion</b>"."の作り方<br><br>";
         echo "<img src=\"img/$img[$arySearch]\"><br><br>";
         echo "　上段の材料：".$result_matl1."<br>";
         echo "　 下段の瓶 ：".$result_matl2."<br>";

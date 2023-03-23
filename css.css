@@ -5,3 +5,7 @@ a{
 a:hover {
 	color:gray;
 }
+
+p {
+	font-size : 20px; 
+}

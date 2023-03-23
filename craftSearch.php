@@ -544,6 +544,7 @@ if(isset($mainItem)){
  
     
     $arySearch = array_search($mainItem,array_column($aryCsv,0));
+
     if($arySearch !== false){
         //材料1
         $result_matl1 = $aryCsv[$arySearch][$matl1];
